@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeMatch AI — Intelligent Candidate Evaluation</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="glass-header">
+            <h1>Resume<span>Match</span> AI</h1>
+            <p>Intelligent AI-powered candidate evaluation</p>
+        </header>
+
+        <!-- Main Content Layout -->
+        <main class="content-layout">
+            
+            <!-- Left Pane: Input Form -->
+            <section class="input-section glass-panel">
+                <div class="panel-content">
+                    <form id="evaluation-form">
+                        <div class="form-group">
+                            <label for="job-description">Job Description</label>
+                            <textarea 
+                                id="job-description" 
+                                name="job-description" 
+                                placeholder="Paste the full job description here..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Resumes (.pdf, .docx)</label>
+                            <div class="file-drop-area" id="file-drop-area">
+                                <span class="drop-msg">Drag & Drop resumes here or click to browse</span>
+                                <input type="file" id="resumes" name="resumes" accept=".pdf, .docx" multiple>
+                            </div>
+                            <ul class="file-list" id="file-list"></ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" form="evaluation-form" class="primary-btn" id="submit-btn">
+                        <span class="btn-text">Evaluate Candidates</span>
+                        <div class="loader" id="btn-loader"></div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Pane: Results -->
+            <section class="results-section glass-panel">
+                <div class="panel-content">
+                    <div class="results-placeholder" id="results-placeholder">
+                        <div class="icon-placeholder">📊</div>
+                        <h2>No Results Yet</h2>
+                        <p>Enter a job description and upload resumes to start the evaluation.</p>
+                    </div>
+                    
+                    <div class="results-content hidden" id="results-content">
+                        <div class="results-header">
+                            <h2>Top Matches</h2>
+                            <div class="role-badge" id="target-role-badge">Data Engineer</div>
+                        </div>
+
+                        <div class="candidates-container" id="top-candidates-list">
+                            <!-- Candidate cards injected here via JS -->
+                        </div>
+
+                        <div class="section-divider hidden" id="lowest-candidates-divider">
+                            Other Candidates
+                        </div>
+                        <div class="candidates-container hidden" id="lowest-candidates-section">
+                            <div class="candidates-container" id="lowest-candidates-list">
+                                <!-- Candidate cards injected here via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="/static/app.js"></script>
+</body>
+</html>
