@@ -1,7 +1,7 @@
 [project]
 name = "llm-resume-evaluator"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI-powered resume evaluation system using Groq LLMs to parse job descriptions and score candidates against requirements with structured Pydantic output"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -10,4 +10,22 @@ dependencies = [
     "pypdf>=6.14.2",
     "python-docx>=1.2.0",
     "python-dotenv>=1.2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
 ]
